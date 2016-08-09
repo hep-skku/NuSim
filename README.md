@@ -7,7 +7,7 @@ mkdir run
 cd run
 cmake ..
 cmake --build .
-./gen event.hepmc 100 # Generate 100 events
-#./gen event2.hepmc 100 1000 # one can add more events with different initial seed and event number
-./sim hepmc_ascii.in
+./gen.exe event.hepmc 100 # Generate 100 events
+#./gen.exe event2.hepmc 100 1000 # one can add more events with different initial seed and event number
+./sim.exe sim.in
 ```
