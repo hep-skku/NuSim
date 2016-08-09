@@ -57,13 +57,13 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(sim sim.cc ${sources} ${headers})
-target_link_libraries(sim ${Geant4_LIBRARIES}
+add_executable(sim.exe sim.cc ${sources} ${headers})
+target_link_libraries(sim.exe ${Geant4_LIBRARIES}
                       ${HEPMC_LIBRARIES} ${HEPMC_FIO_LIBRARIES}
                       ${PYTHIA6_LIBRARIES} gfortran)
 
-add_executable(gen gen.cc)
-target_link_libraries(gen ${ROOT_LIBRARIES}
+add_executable(gen.exe gen.cc)
+target_link_libraries(gen.exe ${ROOT_LIBRARIES}
                       ${HEPMC_LIBRARIES} #${HEPMC_FIO_LIBRARIES}
                       ${PYTHIA6_LIBRARIES} gfortran)
 
@@ -78,7 +78,7 @@ target_link_libraries(gen ${ROOT_LIBRARIES}
 # relies on these scripts being in the current working directory.
 #
 set(NuSim_SCRIPTS
-    hepmc_ascii.in vis.mac
+    sim.in vis.mac
   )
 
 foreach(_script ${NuSim_SCRIPTS})
@@ -92,5 +92,5 @@ endforeach()
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
-install(TARGETS sim gen DESTINATION bin)
+install(TARGETS sim.exe gen.exe DESTINATION bin)
 
