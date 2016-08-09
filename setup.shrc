@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source /tools/sw/slc6_x86_64_gcc491/etc/init.sh
+export HEPMC_DIR=/tools/sw/slc6_x86_64_gcc491
+source /tools/sw/slc6_x86_64_gcc491/bin/thisroot.sh
+source /opt/rh/devtoolset-3/enable
+source /opt/rh/python27/enable
+

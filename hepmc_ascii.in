@@ -1,0 +1,4 @@
+/generator/select hepmcAscii
+/generator/hepmcAscii/open data/invBeta.dat
+/generator/hepmcAscii/verbose 1
+/run/beamOn 3
